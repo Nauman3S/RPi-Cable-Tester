@@ -30,6 +30,7 @@
   - [Pins Used](#pins-used)
 - [Logic Details <a name = "logic"></a>](#logic-details-)
 - [Usage <a name = "usage"></a>](#usage-)
+- [Demo <a name = "demo"></a>](#demo-)
 - [⛏️ Built Using <a name = "built_using"></a>](#️-built-using-)
 - [✍️ Authors <a name = "authors"></a>](#️-authors-)
 
@@ -123,7 +124,10 @@ Raspberry Pi
         python3 /home/pi/Desktop/Firmware.py
 
 - Or follow `AutoStart on Boot` section of this README to make the program run automatically on Raspberry Pi boot.
+- In case of auto boot, a log file is created in logs directory inside the Firmware folder.
+## Demo <a name = "demo"></a>
 
+A demo video is present in the root of this repository which tires to mimic a Y-Cable connections and on any broken connection the Green LED turns off. If all connections are correct then the Green LED turns on.
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [Python](https://www.python.org/) - For programming the Watchman Service
