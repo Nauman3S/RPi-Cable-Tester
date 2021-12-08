@@ -132,7 +132,7 @@ Y-Cable (Connector 3)
 - In case of auto boot, a log file is created in logs directory inside the Firmware folder.
 ## SD-Card Image Backup Restore <a name = "restore_backup"></a>
 
-- Extract the `rpicabletester.zip` preferably using [7-zip](https://www.7-zip.org/) and use Raspberry Pi Disk Imager to write the extracted .img file to your SD Card.
+- Extract the `rpicabletester.zip`, present in sd-card-img folder, preferably using [7-zip](https://www.7-zip.org/) and use Raspberry Pi Disk Imager to write the extracted .img file to your SD Card.
 - [Raspberry Pi Disk Imager](https://www.raspberrypi.com/software/) - For writing the .img file to SD Card.
   
 ## Tests Performed <a name = "tests"></a>
