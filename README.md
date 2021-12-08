@@ -24,12 +24,15 @@
 - [📝 Table of Contents](#-table-of-contents)
 - [🧐 About <a name = "about"></a>](#-about-)
 - [Getting Started <a name = "getting_started"></a>](#getting-started-)
+  - [Prerequisites](#prerequisites)
   - [AutoStart on Boot<a name = "Installation"></a>](#autostart-on-boot)
 - [Circuit <a name = "circuit"></a>](#circuit-)
   - [Raspberry Pi Pinout](#raspberry-pi-pinout)
   - [Pins Used](#pins-used)
 - [Logic Details <a name = "logic"></a>](#logic-details-)
 - [Usage <a name = "usage"></a>](#usage-)
+- [SD-Card Image Backup Restore <a name = "restore_backup"></a>](#sd-card-image-backup-restore-)
+- [Tests Performed <a name = "tests"></a>](#tests-performed-)
 - [Demo <a name = "demo"></a>](#demo-)
 - [⛏️ Built Using <a name = "built_using"></a>](#️-built-using-)
 - [✍️ Authors <a name = "authors"></a>](#️-authors-)
@@ -42,8 +45,12 @@ This repo contain files and detailed instructions on running the RPi Cable Teste
 
 ## Getting Started <a name = "getting_started"></a>
 
-- This program is tested on Raspbery Pi 3B.
-- Copy Firmware folder to the Destkop of your Raspberry Pi.
+### Prerequisites
+
+1. This program is tested on `Raspbery Pi 3B`.
+2. You will need at least `16 GB Class 10 SD Card` restoring the provided .img file.
+  
+- For manual running, copy the Firmware folder to the Destkop of your Raspberry Pi.
 
 
 ### AutoStart on Boot<a name = "Installation"></a>
@@ -123,12 +130,22 @@ Y-Cable (Connector 3)
 
 - Or follow `AutoStart on Boot` section of this README to make the program run automatically on Raspberry Pi boot.
 - In case of auto boot, a log file is created in logs directory inside the Firmware folder.
+## SD-Card Image Backup Restore <a name = "restore_backup"></a>
+
+- Extract the `rpicabletester.zip` preferably using [7-zip](https://www.7-zip.org/) and use Raspberry Pi Disk Imager to write the extracted .img file to your SD Card.
+- [Raspberry Pi Disk Imager](https://www.raspberrypi.com/software/) - For writing the .img file to SD Card.
+  
+## Tests Performed <a name = "tests"></a>
+
+The program is tested throughly on the real hardware.
+- Auto start on boot is tested and it is working.
+- SDCard backup img is made and then restored on the 16GB SD Card to ensure the program works after restoration as well.
 ## Demo <a name = "demo"></a>
 
 A demo video is present in the root of this repository which tires to mimic a Y-Cable connections and on any broken connection the Green LED turns off. If all connections are correct then the Green LED turns on.
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [Python](https://www.python.org/) - For programming the Watchman Service
+- [Python](https://www.python.org/) - For programming
   
 
 ## ✍️ Authors <a name = "authors"></a>

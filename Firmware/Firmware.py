@@ -53,7 +53,7 @@ try:
             GPIO.output(LEDPin, GPIO.LOW)
 
         time.sleep(0.4)
-        # print(correctConnections)
+        print(correctConnections)
    
 except KeyboardInterrupt:  # exit on CTRL+C
     GPIO.cleanup() 
