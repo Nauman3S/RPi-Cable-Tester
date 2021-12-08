@@ -34,7 +34,7 @@ def checkAllConnections():
     for i in range(0, len(correctConnections)):
         if(correctConnections[i]==1):
             correctC=correctC+1
-    if(correctC>=1):
+    if(correctC>=6):
         return 1
     else:
         return 0
@@ -52,12 +52,8 @@ try:
         else:
             GPIO.output(LEDPin, GPIO.LOW)
 
-        
-        # if(correctConnections[0]==1):#for testing first connection
-        #     GPIO.output(LEDPin, GPIO.HIGH)
-        # else:
-        #     GPIO.output(LEDPin, GPIO.LOW)
-    print(correctConnections)
+        time.sleep(0.5)
+        # print(correctConnections)
    
 except KeyboardInterrupt:  # exit on CTRL+C
     GPIO.cleanup() 
