@@ -14,6 +14,7 @@ LEDPin = 12  # GPIO12
 GPIO.setmode(GPIO.BCM)  # BCM pin-numbering (GPIOs)
 
 GPIO.setup(LEDPin, GPIO.OUT)
+GPIO.output(LEDPin, GPIO.LOW)
 for i in range(0, len(Connector1Pins)):
 
     GPIO.setup(Connector1Pins[i], GPIO.OUT)
@@ -27,13 +28,37 @@ for i in range(0, len(Connector1Pins)):
     #using internal pull-up
     GPIO.setup(Connector3Pins[i], GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+def checkAllConnections():
+    global correctConnections
+    correctC=0
+    for i in range(0, len(correctConnections)):
+        if(correctConnections[i]==1):
+            correctC=correctC+1
+    if(correctC>=1):
+        return 1
+    else:
+        return 0
+
 try:
     while 1:
         for pinIndex in range (0,len(correctConnections)):
             if (GPIO.input(Connector2Pins[pinIndex]) == 0 and GPIO.input(Connector3Pins[pinIndex])==0): 
                 correctConnections[pinIndex]=1
+            else:
+                correctConnections[pinIndex]=0
 
+        if(checkAllConnections()==1):#check if all the connections are working
+            GPIO.output(LEDPin, GPIO.HIGH)
+        else:
+            GPIO.output(LEDPin, GPIO.LOW)
+
+        
+        # if(correctConnections[0]==1):#for testing first connection
+        #     GPIO.output(LEDPin, GPIO.HIGH)
+        # else:
+        #     GPIO.output(LEDPin, GPIO.LOW)
     print(correctConnections)
+   
 except KeyboardInterrupt:  # exit on CTRL+C
     GPIO.cleanup() 
     print(correctConnections)
