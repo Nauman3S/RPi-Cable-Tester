@@ -115,8 +115,6 @@ Y-Cable (Connector 3)
 
 -   The program logic for testing cable is simple. Connector 1 is connected to the 6 GPIO pins of Raspberry Pi acting as OUTPUT pins. Connector 2 and Connector 3 are connected to other set of GPIO pins of Raspberry Pi acting as INPUT Pins(with RPi internal PULL-UP Resistors). 
 -   Connector 1 pins send signal(LOW) to Connector 2 and Connector 3 INPUT GPIOs and if all the GPIOs of Connector 2 and 3 becomes LOW, the GREEN LED lights up.
-
-Raspberry Pi
 ## Usage <a name = "usage"></a>
 
 - Copy Firmware folder of this Repo to the Destkop of Raspberry Pi and run the program using the following command
